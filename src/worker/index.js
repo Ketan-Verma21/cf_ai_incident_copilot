@@ -57,12 +57,17 @@ export default {
         messages: [
           {
             role: "system",
-            content:
-              "You are an AI incident assistant that summarizes server issues and suggests fixes.",
+            content: `You are an AI incident assistant that summarizes server issues and suggests fixes.
+            Format your response in the following structure:
+            CATEGORY: [Infrastructure/Application/Network/Security/Database]
+            SEVERITY: [High/Medium/Low]
+            SUMMARY: [Brief description]
+            ANALYSIS: [Detailed analysis]
+            SOLUTION: [Step-by-step fix]`,
           },
           ...aiMessages,
         ],
-        max_tokens:1024, // Increased token limit for longer responses
+        max_tokens: 1024,
       });
       reply = aiResult.response || aiResult.result || "AI did not return a response.";
     } catch (e) {
