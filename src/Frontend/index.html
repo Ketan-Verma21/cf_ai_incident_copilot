@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Incident Copilot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="topbar">
+        <span class="app-title">AI Incident Copilot</span>
+        <button id="sidebar-toggle">≡</button>
+    </div>
+
+    <div class="main-flex">
+        <aside class="sidebar expanded" id="sidebar">
+            <div class="sidebar-content">
+                <h2>Incident Tips</h2>
+                <ul>
+                    <li>Be specific about the issue</li>
+                    <li>Include relevant error messages</li>
+                    <li>Ask for step-by-step solutions</li>
+                </ul>
+
+                <h2>Recent Conversations</h2>
+                <ul id="history-list"></ul>
+            </div>
+        </aside>
+
+        <main class="chat-main">
+            <div id="chat">
+                <div id="chat-placeholder" class="chat-placeholder">
+                    <img src="https://img.icons8.com/ios/50/888888/chat--v1.png" alt="Chat">
+                    <div>
+                        Describe your IT incident<br>
+                        I'll help you resolve it
+                    </div>
+                </div>
+            </div>
+
+            <form class="input-row" onsubmit="event.preventDefault(); sendMessage();">
+                <input type="text" id="message" placeholder="Message AI Incident Copilot..." autocomplete="off">
+                <button type="submit" id="send">Send</button>
+            </form>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

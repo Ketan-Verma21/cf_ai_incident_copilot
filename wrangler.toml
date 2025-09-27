@@ -1,0 +1,16 @@
+name = "cf_ai_incident_copilot"
+main = "src/worker/index.js"
+compatibility_date = "2025-09-24"
+
+[ai]
+binding = "AI"
+remote = true
+
+[durable_objects]
+bindings = [
+  { name = "CHAT_MEMORY", class_name = "ChatMemory" }
+]
+
+[[migrations]]
+tag = "init-chat-memory"
+new_sqlite_classes = ["ChatMemory"]
